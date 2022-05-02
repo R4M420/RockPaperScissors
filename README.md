@@ -1,3 +1,1 @@
-# git_test
-my first github repo!
-Hello Odin!
+# Rock Paper Scissors Game
