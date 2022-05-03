@@ -64,9 +64,9 @@ let userPoints = 0;
 let computerPoints = 0;
 function game() {
     for (let i = 0; i < 5; i++) {
-        answerUser.prompt('rock, paper, scissors...');
+        answerUser = prompt('rock, paper, scissors...');
         computerPlay();
-        console.log(playRound(answerUser, answerComp));
+        alert(playRound(answerUser, answerComp));
         if (didUserWin == 'won') {
             userPoints += 1;
         }
@@ -84,4 +84,4 @@ function game() {
         return 'its a tie';
     }
 }
-console.log(game());  
+alert(game());  
