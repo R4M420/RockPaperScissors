@@ -1,4 +1,3 @@
-// ask the user to choose between rock paper or scissors and store the chosen value in a variable
 // with math.random() and math.floor() i should create a random way for the machine to choose between R P and S and store it in a variable
 let answerComp = 0;
 function computerPlay() {
@@ -65,6 +64,7 @@ let computerPoints = 0;
 function game() {
     for (let i = 0; i < 5; i++) {
         answerUser = prompt('rock, paper, scissors...');
+        answerUser = answerUser.toLowerCase();
         computerPlay();
         alert(playRound(answerUser, answerComp));
         if (didUserWin == 'won') {
