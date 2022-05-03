@@ -1,0 +1,21 @@
+header {
+    display: block;
+}
+h1 {
+    text-align: center;
+    font-size: 100px;
+    font-family: 'Bangers', sans-serif;
+}
+.startButton {
+    display: block;
+}
+#start {
+    margin: 30px 25% 30px 72%;
+    padding: 20px 70px;
+    font-family: 'Bangers', sans-serif;
+    font-size: 30px;
+}
+
+#choose {
+    display: flex;
+}
