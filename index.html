@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 
     <title>Rock Paper Scissors</title>
-    <script type="text/javascript" src="./js/script.js"></script>
+    
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@200&display=swap" rel="stylesheet">
 
@@ -32,10 +32,155 @@
     <div class="restartButton">
       <button id="restart">Restart</button>
     </div>
+    <script>
+      //const express = require ('express');
+
+//const app = express();
+
+//const path = require('path');
+
+//let port = 3030;
+
+//app.listen (port, () => console.log("Servidor andando"));
+
+
+
+// with math.random() and math.floor() i should create a random way for the machine to choose between R P and S and store it in a variable
+
+
+
+
+//  now i need to compare the values given by the user and the machine and show a message saying who is the winner and what did the machine choose
+let didUserWin;
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection == 'rock' && computerSelection == 'rock') {
+        return roundResult.textContent = 'its a tie, rock equals rock.';
+    }
+    else if (playerSelection == 'rock' && computerSelection == 'paper') {
+        didUserWin = 'lose';
+        return roundResult.textContent = 'you lose! paper beats rock.';
+    }
+    else if (playerSelection == 'rock' && computerSelection == 'scissors') {
+        didUserWin = 'won';
+        return roundResult.textContent = 'you won! rock beats scissors.';
+    }
+    else if (playerSelection == 'paper' && computerSelection == 'rock') {
+        didUserWin = 'won';
+        return 'you won! paper beats rock';
+    }
+    else if (playerSelection == 'paper' && computerSelection == 'paper') {
+        return roundResult.textContent = 'its a tie, paper equals paper.';
+    }
+    else if (playerSelection == 'paper' && computerSelection == 'scissors') {
+        didUserWin = 'lose';
+        return roundResult.textContent = 'you lose! scissors beats paper.';
+    }
+    else if (playerSelection == 'scissors' && computerSelection == 'rock') {
+        didUserWin = 'lose';
+        return roundResult.textContent = 'you lose! rock beats scissors.';
+    }
+    else if (playerSelection == 'scissors' && computerSelection == 'paper') {
+        didUserWin = 'won';
+        return roundResult.textContent = 'you won! scissors beats paper.';
+    }
+    else if (playerSelection == 'scissors' && computerSelection == 'scissors') {
+        return roundResult.textContent = 'its a tie, scissors equals scissors.';
+    }
+
+
+
+}
+// create a loop to play a 5 round game, in each round i should print out its winner and at last print out the overall winner
+// each round the player should be prompted
+let userPoints = 0;
+let computerPoints = 0;
+//  with add event listener store the value given by the user on a variable.
+let roundResult = document.querySelector('#result');
+let answerComp;
+let answerUser;
+let rock = document.getElementById('rock');
+let paper = document.getElementById('paper');
+let scissors = document.getElementById('scissors');
+rock.addEventListener('click', () => {
+    computerPlay();
+    
+    if (answerComp == 'rock') {
+        return roundResult.textContent = 'no one gets a point, rock equals rock.';
+    }
+    else if (answerComp == 'paper') {
+        computerPoints += 1;
+        if (computerPoints == 3) {
+            return roundResult.textContent = 'You lose.';
+        }
+        return roundResult.textContent = 'point for the machine, paper beats rock. Points:' + computerPoints;
+    }
+    else if (answerComp == 'scissors') {
+        userPoints += 1;
+        if (userPoints == 3) {
+            return roundResult.textContent = 'Congratulations! You win!';
+        }
+        return roundResult.textContent = 'point for the user, rock beats scissors. Points: ' + userPoints;
+    }
+});
+paper.addEventListener('click', () => {
+    computerPlay();
+    if (userPoints == 3) {
+        return roundResult.textContent = 'Congratulations! You win!';
+    }
+    else if (computerPoints == 3) {
+        return roundResult.textContent = 'You lose.';
+    }
+    else if (answerComp == 'rock') {
+        userPoints += 1;
+        return roundResult.textContent = 'point for the user, paper beats rock. Points: ' + userPoints;
+    }
+    else if (answerComp == 'paper') {
+        return roundResult.textContent = 'no one gets a point, paper equals paper.';
+    }
+    else if (answerComp == 'scissors') {
+        computerPoints += 1;
+        return roundResult.textContent = 'point for the machine, scissors beats paper. Points: ' + computerPoints;
+    }
+});
+scissors.addEventListener('click', () => {
+    computerPlay();
+    if (userPoints == 3) {
+        return roundResult.textContent = 'Congratulations! You win!';
+    }
+    else if (computerPoints == 3) {
+        return roundResult.textContent = 'You lose.';
+    }
+    else if (answerComp == 'rock') {
+        computerPoints += 1;
+        return roundResult.textContent = 'point for the machine, rock beats scissors. Points: ' + computerPoints;
+    }
+    else if (answerComp == 'paper') {
+        userPoints += 1;
+        return roundResult.textContent = 'point for the user, scissors beats paper. Points: ' + userPoints;
+    }
+    else if (answerComp == 'scissors') {
+        return roundResult.textContent = 'no one gets a point, paper equals paper.';
+    }
+});
+
+
+
+function computerPlay() {
+    answerComp = Math.floor(Math.random() * 100);
+    if (answerComp <= 33) {
+        answerComp = 'rock';
+        return answerComp;
+    }
+    else if (answerComp > 33 && answerComp <= 66) {
+        answerComp = 'paper';
+        return answerComp;
+    }
+    else {
+        answerComp = 'scissors';
+        return answerComp;
+    }
+}
+    </script>
    
 </body>
-
-<script>
-  
-</script>
 </html>

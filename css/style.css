@@ -1,3 +1,9 @@
+body {
+    background-image: url(https://p4.wallpaperbetter.com/wallpaper/516/649/201/paper-stone-the-game-monkey-wallpaper-preview.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    height: 60vh;
+}
 header {
     display: block;
 }
@@ -7,15 +13,37 @@ h1 {
     font-family: 'Bangers', sans-serif;
 }
 .startButton {
-    display: block;
+    display: flex;
 }
 #start {
     margin: 30px 25% 30px 72%;
     padding: 20px 70px;
     font-family: 'Bangers', sans-serif;
     font-size: 30px;
+    flex: 1;
 }
 
-#choose {
+.choose {
     display: flex;
+}
+.choose button {
+    flex: 1;
+    margin-left: 8%;
+    margin-right: 8%;
+    height: 80px;
+    margin-top: 60px;
+    font-family: 'Bangers', sans-serif;
+    font-size: 30px;
+}
+.restartButton {
+    display: flex;
+}
+#restart {
+    margin-left: 15%;
+    margin-right: 75%;
+    margin-top: 80px;
+    font-family: 'Bangers', sans-serif;
+    font-size: 30px;
+    flex: 1;
+    padding: 20px 70px;
 }

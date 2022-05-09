@@ -1,4 +1,17 @@
+//const express = require ('express'); <script type="text/javascript" src="./js/script.js"></script>
+
+//const app = express();
+
+//const path = require('path');
+
+//let port = 3030;
+
+//app.listen (port, () => console.log("Servidor andando"));
+
+
+
 // with math.random() and math.floor() i should create a random way for the machine to choose between R P and S and store it in a variable
+
 let answerComp = 0;
 function computerPlay() {
     answerComp = Math.floor(Math.random() * 100);
@@ -15,7 +28,20 @@ function computerPlay() {
         return answerComp;
     }
 }
-console.log(computerPlay());
+//  with add event listener store the value given by the user on a variable.
+let answerUser;
+const rock = document.getElementById('rock');
+let paper = document.querySelector('#paper');
+let scissors = document.querySelector('#scissors');
+rock.addEventListener('click', function() {
+    return answerUser = 'rock';
+});
+paper.addEventListener('click', function() {
+    return answerUser = 'paper';
+});
+scissors.addEventListener('click', function() {
+    return answerUser = 'scissors';
+});
 //  now i need to compare the values given by the user and the machine and show a message saying who is the winner and what did the machine choose
 let didUserWin;
 function playRound(playerSelection, computerSelection) {
@@ -58,15 +84,14 @@ function playRound(playerSelection, computerSelection) {
 }
 // create a loop to play a 5 round game, in each round i should print out its winner and at last print out the overall winner
 // each round the player should be prompted
-let answerUser;
+let start = document.querySelector('#start');
+let roundResult = document.querySelector('#result');
 let userPoints = 0;
 let computerPoints = 0;
 function game() {
     for (let i = 0; i < 5; i++) {
-        answerUser = prompt('rock, paper, scissors...');
-        answerUser = answerUser.toLowerCase();
         computerPlay();
-        alert(playRound(answerUser, answerComp));
+        result.textContent = playRound(answerUser, answerComp);
         if (didUserWin == 'won') {
             userPoints += 1;
         }
@@ -84,4 +109,7 @@ function game() {
         return 'its a tie';
     }
 }
-alert(game());  
+start.addEventListener('click', function() {
+    game();
+    roundResult.textContent = 'go ahead and choose your answer.';
+});  
