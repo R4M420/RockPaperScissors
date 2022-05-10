@@ -12,28 +12,22 @@ h1 {
     font-size: 100px;
     font-family: 'Bangers', sans-serif;
 }
-.startButton {
-    display: flex;
-}
-#start {
-    margin: 30px 25% 30px 72%;
-    padding: 20px 70px;
-    font-family: 'Bangers', sans-serif;
-    font-size: 30px;
-    flex: 1;
-}
 
 .choose {
     display: flex;
 }
 .choose button {
-    flex: 1;
-    margin-left: 8%;
+    background: linear-gradient(135deg, rgba(170, 112, 30, 0.6), rgba(255, 210, 130, 0.2));
+    margin-left: 15%;
     margin-right: 8%;
-    height: 80px;
-    margin-top: 60px;
+    margin-top: 100px;
+    padding: 40px 40px;
     font-family: 'Bangers', sans-serif;
     font-size: 30px;
+    color: aliceblue;
+    border-radius: 10px;
+    border: none;
+    
 }
 .restartButton {
     display: flex;
