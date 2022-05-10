@@ -102,14 +102,15 @@ let rock = document.getElementById('rock');
 let paper = document.getElementById('paper');
 let scissors = document.getElementById('scissors');
 rock.addEventListener('click', () => {
-    computerPlay();
-    
+    computerPlay(); 
     if (answerComp == 'rock') {
         return roundResult.textContent = 'no one gets a point, rock equals rock.';
     }
     else if (answerComp == 'paper') {
         computerPoints += 1;
         if (computerPoints == 3) {
+            userPoints = 0;
+            computerPoints = 0;
             return roundResult.textContent = 'You lose.';
         }
         return roundResult.textContent = 'point for the machine, paper beats rock. Points:' + computerPoints;
@@ -117,6 +118,8 @@ rock.addEventListener('click', () => {
     else if (answerComp == 'scissors') {
         userPoints += 1;
         if (userPoints == 3) {
+            userPoints = 0;
+            computerPoints = 0;
             return roundResult.textContent = 'Congratulations! You win!';
         }
         return roundResult.textContent = 'point for the user, rock beats scissors. Points: ' + userPoints;
@@ -124,14 +127,13 @@ rock.addEventListener('click', () => {
 });
 paper.addEventListener('click', () => {
     computerPlay();
-    if (userPoints == 3) {
-        return roundResult.textContent = 'Congratulations! You win!';
-    }
-    else if (computerPoints == 3) {
-        return roundResult.textContent = 'You lose.';
-    }
-    else if (answerComp == 'rock') {
+    if (answerComp == 'rock') {
         userPoints += 1;
+        if (userPoints == 3) {
+            userPoints = 0;
+            computerPoints = 0;
+            return roundResult.textContent = 'Congratulations! You win!';
+        }
         return roundResult.textContent = 'point for the user, paper beats rock. Points: ' + userPoints;
     }
     else if (answerComp == 'paper') {
@@ -139,23 +141,34 @@ paper.addEventListener('click', () => {
     }
     else if (answerComp == 'scissors') {
         computerPoints += 1;
+        if (computerPoints == 3) {
+            userPoints = 0;
+            computerPoints = 0;
+            return roundResult.textContent = 'You lose.';
+        }
         return roundResult.textContent = 'point for the machine, scissors beats paper. Points: ' + computerPoints;
     }
 });
 scissors.addEventListener('click', () => {
     computerPlay();
-    if (userPoints == 3) {
-        return roundResult.textContent = 'Congratulations! You win!';
-    }
-    else if (computerPoints == 3) {
-        return roundResult.textContent = 'You lose.';
-    }
-    else if (answerComp == 'rock') {
+    
+   
+    if (answerComp == 'rock') {
         computerPoints += 1;
+        if (computerPoints == 3) {
+            userPoints = 0;
+            computerPoints = 0;
+            return roundResult.textContent = 'You lose.';
+        }
         return roundResult.textContent = 'point for the machine, rock beats scissors. Points: ' + computerPoints;
     }
     else if (answerComp == 'paper') {
         userPoints += 1;
+        if (userPoints == 3) {
+            userPoints = 0;
+            computerPoints = 0;
+            return roundResult.textContent = 'Congratulations! You win!';
+        }
         return roundResult.textContent = 'point for the user, scissors beats paper. Points: ' + userPoints;
     }
     else if (answerComp == 'scissors') {
