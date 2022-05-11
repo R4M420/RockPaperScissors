@@ -1,9 +1,4 @@
-body {
-    background-image: url(https://p4.wallpaperbetter.com/wallpaper/516/649/201/paper-stone-the-game-monkey-wallpaper-preview.jpg);
-    background-repeat: no-repeat;
-    background-size: 100vw;
-    height: 60vh;
-}
+
 header {
     display: block;
 }
@@ -15,29 +10,47 @@ h1 {
 
 .choose {
     display: flex;
+    background-position: center;
+    background-image: url(https://www.merca2.es/wp-content/uploads/2020/05/Piedra-papel-o-tijera-0003318_1584-825x259.jpeg);
+    background-repeat: no-repeat;
+    background-size: 50vw;
+    height: 30vh;
 }
 .choose button {
-    background: linear-gradient(135deg, rgba(170, 112, 30, 0.6), rgba(255, 210, 130, 0.2));
+    background: linear-gradient(115deg, rgba(255, 0, 255, 0.4), rgba(0, 255, 255, 0.2));
     margin-left: 15%;
     margin-right: 8%;
-    margin-top: 100px;
-    padding: 40px 40px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    padding: 40px 53px;
     font-family: 'Bangers', sans-serif;
     font-size: 30px;
-    color: aliceblue;
     border-radius: 10px;
     border: none;
     
+}
+#result {
+    background: linear-gradient(115deg, rgba(255, 0, 255, 0.4), rgba(0, 255, 255, 0.2));
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Bangers', sans-serif;
+    margin-top: 60px;
+    margin-left: 38%;
+    margin-right: 38%;
+    padding: 5px 10px 5px 10px;
+    border-radius: 0 10px 0 10px;
 }
 .restartButton {
     display: flex;
 }
 #restart {
-    margin-left: 15%;
+    background: linear-gradient(115deg, rgba(255, 0, 255, 0.4), rgba(0, 255, 255, 0.2));
+    border: none;
+    margin-left: 10%;
     margin-right: 75%;
-    margin-top: 80px;
+    margin-top: 60px;
     font-family: 'Bangers', sans-serif;
     font-size: 30px;
-    flex: 1;
-    padding: 20px 70px;
+    padding: 50px 80px;
+    border-radius: 0 10px 0 10px;
 }
