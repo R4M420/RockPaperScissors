@@ -1,0 +1,23 @@
+{
+  "name": "RockPaperScissors",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/R4M420/RockPaperScissors.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/R4M420/RockPaperScissors/issues"
+  },
+  "homepage": "https://github.com/R4M420/RockPaperScissors#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
